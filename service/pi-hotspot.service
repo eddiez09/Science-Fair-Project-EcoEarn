@@ -1,0 +1,11 @@
+[Unit]
+Description=Pi Hotspot setup helper
+After=network.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/bin/bash /home/pi/Python/scripts/setup_ap.sh PiHotspot raspberry wlan0 192.168.4.1
+
+[Install]
+WantedBy=multi-user.target
